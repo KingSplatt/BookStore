@@ -13,7 +13,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
                 "https://bookstore-production-2e34.up.railway.app",
-                "https://monumental-crumble-4b6763.netlify.app",
+                "https://monumental-crumble-4b67e3.netlify.app",
                 "https://effulgent-faun-30e99a.netlify.app",
                 "http://localhost:5001" // For local development
               )
