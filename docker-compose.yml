@@ -4,7 +4,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: BookStore.Api/Dockerfile
+      dockerfile: ./BookStore.Api/Dockerfile
     ports:
       - "5000:80"
     environment:
@@ -13,7 +13,7 @@ services:
   client:
     build:
       context: .
-      dockerfile: BookStore.Client/Dockerfile
+      dockerfile: ./BookStore.Client/Dockerfile
     ports:
       - "5001:80"
     depends_on:
