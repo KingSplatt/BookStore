@@ -1,11 +1,10 @@
-# Netlify configuration for automatic deployment
+# Netlify configuration for Blazor WebAssembly deployment
 [build]
-  publish = "BookStore.Client/publish/wwwroot"
-  command = "dotnet publish BookStore.Client/BookStore.Client.csproj -c Release -o BookStore.Client/publish"
+  publish = "BookStore.Client/bin/Release/net9.0/publish/wwwroot"
+  command = "bash build-netlify.sh"
 
 [build.environment]
-  DOTNET_VERSION = "9.0"
-  DOTNET_CLI_TELEMETRY_OPTOUT = "1"
+  DOTNET_VERSION = "9.0.100"
 
 [[redirects]]
   from = "/*"
