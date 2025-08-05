@@ -315,7 +315,7 @@
                 hasMoreData = true;
             }
             
-            var baseUrl = "https://localhost:7251";
+            var baseUrl = Http.BaseAddress?.ToString().TrimEnd('/') ?? "https://localhost:7251";
             //Configuration Global por decimal separator
             var likesStr = likes.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
             var reviewCountStr = reviewCount.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
@@ -376,7 +376,7 @@
         try
         {
             var pagesLoaded = (int)Math.Ceiling((double)books.Count / 20);
-            var baseUrl = "https://localhost:7251";
+            var baseUrl = Http.BaseAddress?.ToString().TrimEnd('/') ?? "https://localhost:7251";
             var likesStr = likes.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
             var reviewCountStr = reviewCount.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
             var url = $"{baseUrl}/api/books/export?locale={selectedLocale}&seed={currentSeed}&pages={pagesLoaded}&likes={likesStr}&reviewCount={reviewCountStr}";

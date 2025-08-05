@@ -11,7 +11,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowBlazorClient", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins(
+                "https://bookstore-production-2e34.up.railway.app",
+                "https://effulgent-faun-30e99a.netlify.app",
+                "http://localhost:5001" // For local development
+              )
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
