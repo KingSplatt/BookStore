@@ -1,0 +1,13 @@
+# Netlify configuration for automatic deployment
+[build]
+  publish = "BookStore.Client/publish/wwwroot"
+  command = "dotnet publish BookStore.Client/BookStore.Client.csproj -c Release -o BookStore.Client/publish"
+
+[build.environment]
+  DOTNET_VERSION = "9.0"
+  DOTNET_CLI_TELEMETRY_OPTOUT = "1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
